@@ -454,6 +454,10 @@ Authorization: Bearer <token>
 }
 ```
 
+### Get due todo list
+
+// todo
+
 ### Create a new ToDo
 
 - URL: `/todos`
