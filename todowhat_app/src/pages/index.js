@@ -36,13 +36,8 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.todoHeader}>
           <h2>My Todo List</h2>
-          <Link href="/TodoPage">
-            <button type="button" className="btn btn-outline-primary btn-sm">
-              Add Todo
-            </button>
-          </Link>
         </div>
-        <TodoTable todos={todos} />
+        <TodoTable mode="private" />
       </main>
     </div>
   );

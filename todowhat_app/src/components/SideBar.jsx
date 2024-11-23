@@ -15,34 +15,51 @@ const mockDynamicGroups = [
     { id: 2, name: "Project Beta", count: 7, link: "/group/2" },
 ];
 
-// Fetch data for permanent items from APIs
-useEffect(() => {
 const fetchCounts = async () => {
     try {
-    const [myListRes, assignedRes, dueRes] = await Promise.all([
-        fetch("/todos"),
-        fetch("/assignedtodos"),
-        fetch("/duetodos"),
-    ]);
-
-    const [myListData, assignedData, dueData] = await Promise.all([
-        myListRes.json(),
-        assignedRes.json(),
-        dueRes.json(),
-    ]);
-
-    setCounts({
-        myList: myListData.length || 0,
-        assignedToMe: assignedData.length || 0,
-        dueToday: dueData.length || 0,
-    });
+      const mockMyList = [{ id: 1, task: "Task 1" }, { id: 2, task: "Task 2" }];
+      const mockAssigned = [{ id: 1, task: "Assigned Task 1" }];
+      const mockDue = [{ id: 1, task: "Due Task 1" }];
+  
+      setCounts({
+        myList: mockMyList.length,
+        assignedToMe: mockAssigned.length,
+        dueToday: mockDue.length,
+      });
     } catch (error) {
-    console.error("Failed to fetch counts:", error);
+      console.error("Failed to fetch counts:", error);
     }
-};
+  };
 
-    fetchCounts();
-}, []);
+
+// Fetch data for permanent items from APIs
+// useEffect(() => {
+// const fetchCounts = async () => {
+//     try {
+//     const [myListRes, assignedRes, dueRes] = await Promise.all([
+//         fetch("/todos"),
+//         fetch("/assignedtodos"),
+//         fetch("/duetodos"),
+//     ]);
+
+//     const [myListData, assignedData, dueData] = await Promise.all([
+//         myListRes.json(),
+//         assignedRes.json(),
+//         dueRes.json(),
+//     ]);
+
+//     setCounts({
+//         myList: myListData.length || 0,
+//         assignedToMe: assignedData.length || 0,
+//         dueToday: dueData.length || 0,
+//     });
+//     } catch (error) {
+//     console.error("Failed to fetch counts:", error);
+//     }
+// };
+
+//     fetchCounts();
+// }, []);
 
 return (
     <div className="p-3 bg-light border-end vh-100">
