@@ -1,0 +1,12 @@
+.homepage {
+    display: flex;
+}
+
+.todolist {
+    text-align: center;
+}
+
+.dropdown {
+    background-color: #f8f9fa;
+    text-align: right;
+}
