@@ -3,7 +3,6 @@ import TodoTable from "@/components/TodoTable";
 import UserDropdown from "@/components/UserDropdown";
 
 import Link from "next/link"
-import { sidebar, buttons } from "@/styles/SideBar.module.css"
 import styles from "@/styles/index.module.css"
 import "bootstrap/dist/css/bootstrap.min.css";
 
