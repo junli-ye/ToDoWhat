@@ -61,15 +61,20 @@ const TodoItem = ({ index, todo, mode }) => {
             </td>
             <td>
                 <button type="button" className="btn btn-light">
-                🗑️
+                ❌
                 {/* <Image src="/assets/Delete.png" width={20} height={20} alt="Delete" /> */}
+                </button>
+            </td>
+            <td>
+                <button type="button" className="btn btn-light">
+                ✅
                 </button>
             </td>
         </tr>
         {/* Expanded Row */}
         {isExpanded && todo.text && (
           <tr>
-            <td colSpan={mode === "group" ? 8 : 7} style={{ padding: "10px", backgroundColor: "#f9f9f9" }}>
+            <td colSpan={mode === "group" ? 9 : 8} style={{ padding: "10px", backgroundColor: "#f9f9f9" }}>
               <strong>👉</strong> {todo.text}
             </td>
           </tr>

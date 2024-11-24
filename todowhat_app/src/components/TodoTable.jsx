@@ -82,6 +82,8 @@ const TodoTable = ({ mode, todos, groupId }) => {
                 {mode === "group" && <th>Assigned To</th>}
                 <th></th>
                 <th></th>
+                <th></th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
