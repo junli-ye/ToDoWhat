@@ -113,7 +113,7 @@ const MembersModal = ({ show, onClose, groupId }) => {
             }
           }
         } catch (err) {
-          setAddMemberError("An error occurred while inviting the member.");
+          setAddMemberError("An error occurred while inviting the member. Try again later.");
         }
       };
 
@@ -140,10 +140,6 @@ const MembersModal = ({ show, onClose, groupId }) => {
                 <div className="alert alert-danger">{error}</div>
             ) : (
                 <>
-                <Button className="btn btn-primary mb-3" 
-                        onClick={() => setShowAddMemberModal(true)}>
-                    Add Member
-                </Button>
                 <ul className="list-group">
                     {members.map((member) => (
                         <li
@@ -171,6 +167,10 @@ const MembersModal = ({ show, onClose, groupId }) => {
             )}
         </Modal.Body>
         <Modal.Footer>
+            <Button className="btn btn-primary" 
+                    onClick={() => setShowAddMemberModal(true)}>
+                Add Member
+            </Button>
             <Button variant="secondary" onClick={onClose}>
             Close
             </Button>
