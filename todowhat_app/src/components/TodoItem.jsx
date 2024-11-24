@@ -2,7 +2,11 @@ import Image from "next/image"
 import { format, parseISO, isBefore, addHours } from "date-fns";
 import { useState } from "react";
 
-const TodoItem = ({ index, todo, mode }) => {
+const TodoItem = ({ index, todo, mode, onClickEdit }) => {
+    const handleClickEdit = () => {
+      onClickEdit(todo.id)
+    }
+
     // Parse and format data
     const taskName = todo.task || "No Task";
     const category = todo.category || "No Category";
@@ -45,6 +49,7 @@ const TodoItem = ({ index, todo, mode }) => {
             <td style={{ color: "inherit" }}>{status}</td>
             {mode === "group" && <td style={{ color: "inherit" }}>{user}</td>} {/* Assigned To column */}
             <td>
+<<<<<<< Updated upstream
               <button
                 type="button"
                 className="btn btn-light"
@@ -57,6 +62,10 @@ const TodoItem = ({ index, todo, mode }) => {
                 <button type="button" className="btn btn-light">
                 ✍️
                 {/* <Image src="/assets/Edit.png" width={20} height={20} alt="Edit" /> */}
+=======
+                <button type="button" className="btn btn-light" onClick={handleClickEdit}>
+                <Image src="/assets/Edit.png" width={20} height={20} alt="Edit" />
+>>>>>>> Stashed changes
                 </button>
             </td>
             <td>
