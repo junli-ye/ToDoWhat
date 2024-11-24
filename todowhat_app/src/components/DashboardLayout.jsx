@@ -1,6 +1,7 @@
 import SideBar from "@/components/SideBar";
 import UserDropdown from "@/components/UserDropdown";
-import styles from "@/styles/DashboardLayout.module.css";
+import styles from "@/styles/Dashboard.module.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function DashboardLayout({ children }) {
   // Mock user data

@@ -1,4 +1,6 @@
 import TodoTable from "@/components/TodoTable";
+import DashboardLayout from "@/components/DashboardLayout";
+
 
 export default function TodosPage() {
   return (
@@ -10,6 +12,5 @@ export default function TodosPage() {
 }
 
 TodosPage.getLayout = function getLayout(page) {
-  const DashboardLayout = require("@/components/DashboardLayout").default;
   return <DashboardLayout>{page}</DashboardLayout>;
 };

@@ -2,11 +2,15 @@ import "@/styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css"
 import { useEffect } from "react";
 
+
 export default function App({ Component, pageProps }) {
+  // Dynamically loading Bootstrap JS
   useEffect(() => {
-    // 动态加载 JS
-    import('bootstrap/dist/js/bootstrap.bundle.min.js');
+    import("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
 
-  return <Component {...pageProps} />;
+  // Get layout function
+  const getLayout = Component.getLayout || ((page) => page);
+
+  return getLayout(<Component {...pageProps} />);
 }
