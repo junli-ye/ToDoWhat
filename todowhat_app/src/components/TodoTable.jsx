@@ -90,14 +90,19 @@ const TodoTable = ({ mode, todos, groupId }) => {
             ))}
             </tbody>
         </table>
-        {/* Add Modals */}
-        <AddTodoModal show={showModal} onClose={() => setShowModal(false)} />
+        {/* Add and Members Modals */}
+        <AddTodoModal 
+            show={showModal} 
+            onClose={() => setShowModal(false)} 
+            isPrivate={mode !== "group"}
+            groupId={mode === "group" ? groupId : null}
+        />
         <MembersModal
             show={showMembersModal}
             onClose={() => setShowMembersModal(false)}
             groupId={groupId}
         />
-        </div>
+    </div>
   );
 };
 

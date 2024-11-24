@@ -450,9 +450,25 @@ Authorization: Bearer <token>
 }
 ```
 
-### Get due todo list
+### Get all lists information for nav bar
 
-// todo
+//todo
+
+```json
+{
+  "success": true,
+  "message": "Lists information get successfully",
+  "Private": {
+    "myList": 5,
+    "assignedToMe": 3,
+    "dueToday": 2
+  },
+  "Group": [
+    { "id": 1, "name": "Team Alpha", "count": 4 },
+    { "id": 2, "name": "Project Beta", "count": 7 }
+  ]
+}
+```
 
 ### Create a new ToDo
 
@@ -600,7 +616,7 @@ Authorization: Bearer <token>
 
 ### Create a group
 
-- URL: `/groups`
+- URL: `/groups/new`
 - Method: `POST`
 - Headers:
 
