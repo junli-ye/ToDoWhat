@@ -1,7 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 const UserDropdown = ({ username, onLogout }) => {
+  const { t } = useTranslation(); // Hook for translations
+
   return (
     <div className="dropdown">
       {/* Dropdown toggle */}
@@ -19,7 +22,7 @@ const UserDropdown = ({ username, onLogout }) => {
       <ul className="dropdown-menu dropdown-menu-end">
         <li>
           <Link href="/reset-password" className="dropdown-item">
-            Change Password
+            {t("header.Change Password")}
           </Link>
         </li>
         <li>
@@ -27,7 +30,7 @@ const UserDropdown = ({ username, onLogout }) => {
             className="dropdown-item text-danger"
             onClick={onLogout}
           >
-            Log Out
+            {t("header.Log Out")}
           </button>
         </li>
       </ul>

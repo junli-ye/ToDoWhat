@@ -1,7 +1,10 @@
 import Link from "next/link"
 import { useEffect, useState } from "react"
+import { useTranslation } from "react-i18next";
 
 const SideBar = () => {
+    const { t } = useTranslation(); // Hook for translations
+
     // State to store counts and groups
     const [data, setData] = useState({
     Private: {
@@ -85,7 +88,7 @@ const SideBar = () => {
     return (
         <div className="p-3 bg-light border-end vh-100">
           {/* Permanent Items */}
-          <h6 className="text-uppercase fw-bold mb-3">My Lists</h6>
+          <h6 className="text-uppercase fw-bold mb-3">{t("sidebar.My Lists")}</h6>
           <div className="mb-4">
             {loading ? (
               <p>Loading...</p>
@@ -93,21 +96,21 @@ const SideBar = () => {
               <>
                 <Link href="/todos" passHref>
                   <div className="d-flex justify-content-between align-items-center p-2 mb-2 border rounded bg-white shadow-sm">
-                    <span className="fw-semibold">My List</span>
+                    <span className="fw-semibold">{t("sidebar.My List")}</span>
                     <span className="badge bg-primary rounded-pill">{Private.myList}</span>
                   </div>
                 </Link>
     
                 <Link href="/assigned-to-me" passHref>
                   <div className="d-flex justify-content-between align-items-center p-2 mb-2 border rounded bg-white shadow-sm">
-                    <span className="fw-semibold">Assigned to Me</span>
+                    <span className="fw-semibold">{t("sidebar.Assigned to Me")}</span>
                     <span className="badge bg-secondary rounded-pill">{Private.assignedToMe}</span>
                   </div>
                 </Link>
     
                 <Link href="/due-todos" passHref>
                   <div className="d-flex justify-content-between align-items-center p-2 mb-2 border rounded bg-white shadow-sm">
-                    <span className="fw-semibold">Due Today</span>
+                    <span className="fw-semibold">{t("sidebar.Due Today")}</span>
                     <span className="badge bg-danger rounded-pill">{Private.dueToday}</span>
                   </div>
                 </Link>
@@ -117,7 +120,7 @@ const SideBar = () => {
     
           {/* Dynamic Groups */}
           <div>
-            <h6 className="text-uppercase fw-bold mb-3">My Groups</h6>
+            <h6 className="text-uppercase fw-bold mb-3">{t("sidebar.My Groups")}</h6>
             {loading ? (
               <p>Loading...</p>
             ) : (

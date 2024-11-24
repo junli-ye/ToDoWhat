@@ -8,5 +8,13 @@
 
     "footer": {
       "contact": "Contact Us"
+    },
+
+    "sidebar": {
+        "My Lists": "My Lists",
+        "My Groups": "My Groups",
+        "My List": "My List",
+        "Assigned to Me" : "Assigned to Me",
+        "Due Today" : "Due Today"
     }
 }

@@ -8,5 +8,13 @@
 
     "footer": {
       "contact": "Contact Us"
+    },
+
+    "sidebar": {
+        "My Lists": "个人待办",
+        "My Groups": "小组待办",
+        "My List": "我的待办事项",
+        "Assigned to Me" : "分配给我",
+        "Due Today" : "今日到期"
     }
 }
