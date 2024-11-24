@@ -1,0 +1,12 @@
+{
+    "ToDoWhat": "ToDoWhat",
+
+    "header": {
+        "Change Password": "Welcome",
+        "Log Out": "Log Out"
+    },
+
+    "footer": {
+      "contact": "Contact Us"
+    }
+}
