@@ -67,7 +67,7 @@ return (
       <h6 className="text-uppercase fw-bold mb-3">My lists</h6>
 
       <div className="mb-4">
-        <Link href="/my-list" passHref>
+        <Link href="/todos" passHref>
           <div className="d-flex justify-content-between align-items-center p-2 mb-2 border rounded bg-white shadow-sm">
             <span className="fw-semibold">My List</span>
             <span className="badge bg-primary rounded-pill">{counts.myList}</span>
@@ -81,7 +81,7 @@ return (
           </div>
         </Link>
 
-        <Link href="/due-today" passHref>
+        <Link href="/due-todos" passHref>
           <div className="d-flex justify-content-between align-items-center p-2 mb-2 border rounded bg-white shadow-sm">
             <span className="fw-semibold">Due Today</span>
             <span className="badge bg-danger rounded-pill">{counts.dueToday}</span>
