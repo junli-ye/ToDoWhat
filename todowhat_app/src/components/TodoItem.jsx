@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { format, parseISO, isBefore, addHours } from "date-fns";
+import { useState } from "react";
 
 const TodoItem = ({ index, todo, mode }) => {
     // Parse and format data
@@ -31,8 +32,12 @@ const TodoItem = ({ index, todo, mode }) => {
       rowStyle = { color: "red" };
     }
 
+    // Expand/Collapse state
+    const [isExpanded, setIsExpanded] = useState(false);
   
     return (
+      <>
+        {/* Main Row */}
         <tr style={rowStyle}>
             <td style={{ color: "inherit" }}>{taskName}</td>
             <td style={{ color: "inherit" }}>{category}</td>
@@ -40,16 +45,36 @@ const TodoItem = ({ index, todo, mode }) => {
             <td style={{ color: "inherit" }}>{status}</td>
             {mode === "group" && <td style={{ color: "inherit" }}>{user}</td>} {/* Assigned To column */}
             <td>
+              <button
+                type="button"
+                className="btn btn-light"
+                onClick={() => setIsExpanded(!isExpanded)}
+              >
+                {isExpanded ? "⬆️" : "⬇️"}
+              </button>
+            </td>
+            <td>
                 <button type="button" className="btn btn-light">
-                <Image src="/assets/Edit.png" width={20} height={20} alt="Edit" />
+                ✍️
+                {/* <Image src="/assets/Edit.png" width={20} height={20} alt="Edit" /> */}
                 </button>
             </td>
             <td>
                 <button type="button" className="btn btn-light">
-                <Image src="/assets/Delete.png" width={20} height={20} alt="Delete" />
+                🗑️
+                {/* <Image src="/assets/Delete.png" width={20} height={20} alt="Delete" /> */}
                 </button>
             </td>
         </tr>
+        {/* Expanded Row */}
+        {isExpanded && todo.text && (
+          <tr>
+            <td colSpan={mode === "group" ? 8 : 7} style={{ padding: "10px", backgroundColor: "#f9f9f9" }}>
+              <strong>👉</strong> {todo.text}
+            </td>
+          </tr>
+        )}
+      </>
     );
   };
   
