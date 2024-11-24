@@ -315,13 +315,9 @@ Authorization: Bearer <token>
     "message": "A temporary password has been sent to your email address."
   }
   
-  // Error message
   {
-    "success": false,
-    "error": {
-      "code": "EMAIL_NOT_FOUND",
-      "message": "The provided email address is not registered."
-    }
+    "success": true,
+    "message": "The provided email address is not registered."
   }
   ```
 
@@ -874,3 +870,9 @@ Authorization: Bearer <token>
   }
 ]
 ```
+
+# ReCaptcha
+
+Site key: 6LcmpIgqAAAAALbILtUTYT_hsq8fBTeaWv-7cAQ2
+
+Secret key: 6LcmpIgqAAAAAD6lz-yLDKETebf5M2F4GyqXSAfx
