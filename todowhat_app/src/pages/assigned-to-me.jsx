@@ -1,5 +1,6 @@
 import TodoTable from "@/components/TodoTable";
 import { useEffect, useState } from "react";
+import DashboardLayout from "@/components/DashboardLayout";
 
 export default function AssignedToMePage() {
     const [todos, setTodos] = useState([]);
@@ -44,6 +45,5 @@ export default function AssignedToMePage() {
 }
 
 AssignedToMePage.getLayout = function getLayout(page) {
-  const DashboardLayout = require("@/components/DashboardLayout").default;
   return <DashboardLayout>{page}</DashboardLayout>;
 };
