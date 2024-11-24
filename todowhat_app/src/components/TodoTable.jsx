@@ -1,11 +1,13 @@
 import TodoItem from "./TodoItem";
 import React, { useState } from "react";
 import AddTodoModal from "./AddTodoModal";
+import MembersModal from "./MembersModal";
 
-const TodoTable = ({ mode, todos }) => {
+const TodoTable = ({ mode, todos, groupId }) => {
     // Sorting state
     const [sortField, setSortField] = useState("deadline");
     const [showModal, setShowModal] = useState(false);
+    const [showMembersModal, setShowMembersModal] = useState(false); 
 
     // Sort function
     const sortTodos = (todos, field) => {
@@ -49,7 +51,7 @@ const TodoTable = ({ mode, todos }) => {
                     <button
                     type="button"
                     className="btn btn-outline-secondary btn-sm"
-                    onClick={() => console.log("Members clicked")} // Replace with desired action
+                    onClick={() => setShowMembersModal(true)} // Show MembersModal on click
                     >
                     Members
                     </button>
@@ -88,9 +90,14 @@ const TodoTable = ({ mode, todos }) => {
             ))}
             </tbody>
         </table>
-      {/* Add Todo Modal */}
-      <AddTodoModal show={showModal} onClose={() => setShowModal(false)} />
-    </div>
+        {/* Add Modals */}
+        <AddTodoModal show={showModal} onClose={() => setShowModal(false)} />
+        <MembersModal
+            show={showMembersModal}
+            onClose={() => setShowMembersModal(false)}
+            groupId={groupId}
+        />
+        </div>
   );
 };
 

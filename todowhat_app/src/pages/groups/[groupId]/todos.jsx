@@ -4,16 +4,16 @@ import TodoTable from "@/components/TodoTable";
 
 export default function GroupTodosPage() {
   const router = useRouter();
-  const { id } = router.query; // 从路由中获取 groupId
+  const { groupId } = router.query; // 从路由中获取 groupId
   const [todos, setTodos] = useState([]);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (!id) return; // 如果没有 groupId，不发出请求
+    if (!groupId) return; // 如果没有 groupId，不发出请求
 
     const fetchGroupTodos = async () => {
       try {
-        const res = await fetch(`/api/groups/${id}/todos`, {
+        const res = await fetch(`/api/groups/${groupId}/todos`, {
           method: "GET",
           headers: {
             Authorization: "Bearer YOUR_TEST_TOKEN", // 模拟 Authorization token
@@ -33,15 +33,15 @@ export default function GroupTodosPage() {
     };
 
     fetchGroupTodos();
-  }, [id]);
+  }, [groupId]);
 
   return (
     <div>
-      <h2>{id ? `Group ${id} - Todos` : "Loading Group Todos..."}</h2>
+      <h2>{groupId ? `Group ${groupId} - Todos` : "Loading Group Todos..."}</h2>
       {error ? (
         <div className="alert alert-danger">{error}</div>
       ) : (
-        <TodoTable mode="group" todos={todos} />
+        <TodoTable mode="group" todos={todos} groupId={groupId}/>
       )}
     </div>
   );
