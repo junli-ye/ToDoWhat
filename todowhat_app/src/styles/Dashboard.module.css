@@ -83,3 +83,11 @@ justify-content: space-between;
 align-items: center;
 margin-bottom: 20px;
 }
+
+/* 用户控件容器 */
+.userControls {
+  display: flex;
+  align-items: center; /* 垂直居中 */
+  gap: 10px; /* 按钮间距 */
+  margin-left: auto; /* 将控件组推到右侧 */
+}

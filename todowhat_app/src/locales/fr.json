@@ -1,0 +1,12 @@
+{
+    "ToDoWhat": "ToDoWhat ｜ Quoi faire",
+
+    "header": {
+        "Change Password": "Changer MDP",
+        "Log Out": "Quitter"
+    },
+
+    "footer": {
+      "contact": "Nous contacter"
+    }
+}

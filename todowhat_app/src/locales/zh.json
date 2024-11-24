@@ -1,0 +1,12 @@
+{
+    "ToDoWhat": "ToDoWhat ｜ 干点啥",
+
+    "header": {
+        "Change Password": "修改密码",
+        "Log Out": "退出登录"
+    },
+
+    "footer": {
+      "contact": "Contact Us"
+    }
+}
