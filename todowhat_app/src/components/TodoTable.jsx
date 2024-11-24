@@ -1,13 +1,21 @@
 import TodoItem from "./TodoItem";
 import React, { useState } from "react";
 import AddTodoModal from "./AddTodoModal";
+import EditTodoModal from "./EditTodoModal";
 import MembersModal from "./MembersModal";
 
 const TodoTable = ({ mode, todos, groupId }) => {
     // Sorting state
     const [sortField, setSortField] = useState("deadline");
     const [showModal, setShowModal] = useState(false);
+    const [showEditModal, setShowEditModal] = useState(false);
     const [showMembersModal, setShowMembersModal] = useState(false); 
+    const [idItemToEdit, setIdItemToEdit] = useState(0)
+
+    const handleShowEditModal = (id) => {
+        setIdItemToEdit(id)
+        setShowEditModal(true)
+    }
 
     // Sort function
     const sortTodos = (todos, field) => {
@@ -88,7 +96,7 @@ const TodoTable = ({ mode, todos, groupId }) => {
             </thead>
             <tbody>
             {finalTodos.map((todo, index) => (
-                <TodoItem key={index} index={index + 1} todo={todo} mode={mode} />
+                <TodoItem key={index} index={index + 1} todo={todo} mode={mode} onClickEdit={handleShowEditModal}/>
             ))}
             </tbody>
         </table>
@@ -96,6 +104,13 @@ const TodoTable = ({ mode, todos, groupId }) => {
         <AddTodoModal 
             show={showModal} 
             onClose={() => setShowModal(false)} 
+            isPrivate={mode !== "group"}
+            groupId={mode === "group" ? groupId : null}
+        />
+        <EditTodoModal 
+            todo={todos.find(item => item.id === idItemToEdit)}
+            show={showEditModal} 
+            onClose={() => setShowEditModal(false)} 
             isPrivate={mode !== "group"}
             groupId={mode === "group" ? groupId : null}
         />
