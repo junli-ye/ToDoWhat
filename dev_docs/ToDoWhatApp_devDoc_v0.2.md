@@ -690,17 +690,6 @@ Authorization: Bearer <token>
 {
   "success": false,
   "error": {
-    "code": "VALIDATION_ERROR",
-    "message": "Invalid request data",
-    "details": {
-      "userId": "User ID is required and must be valid."
-    }
-  }
-}
-
-{
-  "success": false,
-  "error": {
     "code": "UNAUTHORIZED",
     "message": "Authorization token is required or invalid."
   }
@@ -721,6 +710,7 @@ Authorization: Bearer <token>
     "message": "The specified user does not exist."
   }
 }
+// 这种情况，服务器仍然将信息写入到数据库，并创建一个新账号，把密码和账号发送到受邀人
 
 {
   "success": false,
@@ -739,13 +729,13 @@ Authorization: Bearer <token>
 }
 ```
 
-### Update a member's role in a group
+### ~~[准备把这个功能删掉]Update a member's role in a group~~
 
-- Only the owner or admin role of a group has permission to perform this action (but only the owner can change someone else's role to owner).
+- ~~Only the owner or admin role of a group has permission to perform this action (but only the owner can change someone else's role to owner).~~
 
-- URL: `/groups/[groupId]/role/[userId]`
-- Method: `PATCH`
-- Headers:
+- ~~URL: `/groups/[groupId]/role/[userId]`~~
+- ~~Method: `PATCH`~~
+- ~~Headers:~~
 
 ```
 Authorization: Bearer <token>
