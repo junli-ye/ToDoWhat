@@ -12,14 +12,7 @@ const UserDropdown = ({ username, onLogout }) => {
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        <Image
-          src="/assets/User.png"
-          width={24}
-          height={24}
-          alt="User Avatar"
-          className="me-2"
-        />
-        <span>{username}</span>
+      <span>{username}</span>
       </a>
 
       {/* Dropdown menu */}

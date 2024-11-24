@@ -11,7 +11,7 @@ export default function DashboardLayout({ children }) {
     <div className={styles.layout}>
       {/* Header */}
       <header className={styles.header}>
-        <h1 className={styles.title}>ToDoWhat</h1>
+        <h1 className={styles.title}>😼ToDoWhat</h1>
         <div className={styles.userDropdown}>
           <UserDropdown username={user.username} />
         </div>
