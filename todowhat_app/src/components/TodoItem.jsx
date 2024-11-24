@@ -49,23 +49,8 @@ const TodoItem = ({ index, todo, mode, onClickEdit }) => {
             <td style={{ color: "inherit" }}>{status}</td>
             {mode === "group" && <td style={{ color: "inherit" }}>{user}</td>} {/* Assigned To column */}
             <td>
-<<<<<<< Updated upstream
-              <button
-                type="button"
-                className="btn btn-light"
-                onClick={() => setIsExpanded(!isExpanded)}
-              >
-                {isExpanded ? "⬆️" : "⬇️"}
-              </button>
-            </td>
-            <td>
-                <button type="button" className="btn btn-light">
-                ✍️
-                {/* <Image src="/assets/Edit.png" width={20} height={20} alt="Edit" /> */}
-=======
                 <button type="button" className="btn btn-light" onClick={handleClickEdit}>
                 <Image src="/assets/Edit.png" width={20} height={20} alt="Edit" />
->>>>>>> Stashed changes
                 </button>
             </td>
             <td>
