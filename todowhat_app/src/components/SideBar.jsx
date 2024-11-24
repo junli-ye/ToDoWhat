@@ -93,7 +93,7 @@ return (
       <div>
         <h6 className="text-uppercase fw-bold mb-3">My Groups</h6>
         {mockDynamicGroups.map((group) => (
-          <Link key={group.id} href={`/groups/:${group.id}/todos`} passHref>
+          <Link key={group.id} href={`/groups/${group.id}/todos`} passHref>
             <div className="d-flex justify-content-between align-items-center p-2 mb-2 border rounded bg-white shadow-sm">
               <span className="fw-semibold">{group.name}</span>
               <span className="badge bg-secondary rounded-pill">{group.count}</span>

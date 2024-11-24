@@ -650,6 +650,8 @@ Authorization: Bearer <token>
 }
 ```
 
+### Get group member list
+
 ### Add new group member
 
 - URL: `/groups/:groupId/invite`
@@ -741,7 +743,7 @@ Authorization: Bearer <token>
 
 - Only the owner or admin role of a group has permission to perform this action (but only the owner can change someone else's role to owner).
 
-- URL: `/groups/:groupId/role/:userId`
+- URL: `/groups/[groupId]/role/[userId]`
 - Method: `PATCH`
 - Headers:
 
@@ -795,7 +797,7 @@ Authorization: Bearer <token>
 
 - Only owner and admin has right to do this operation, only owner can remove an admin
 
-- URL: `/groups/:groupId/remove/:userId`
+- URL: `/groups/[groupId]/remove/:userId`
 - Method: `DELETE`
 - Headers:
 
@@ -846,9 +848,13 @@ Authorization: Bearer <token>
 }
 ```
 
+### Get one's participated groups list
+
+// todo
+
 ### Get group ToDos
 
-- URL: `/groups/:groupId/todos`
+- URL: `/groups/[groupId]/todos`
 - Method: `GET`
 - Headers:
 
